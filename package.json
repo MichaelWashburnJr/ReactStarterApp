@@ -1,14 +1,13 @@
 {
-  "name": "react-slingshot",
-  "version": "7.0.0",
-  "description": "Starter kit for creating apps with React and Redux",
+  "name": "react-starter-app",
+  "version": "1.0.0",
+  "description": "Starter React app with React, Redux, Jest, Webpack, Bootstrap. Derivative of react-slingshot by Cory House.",
   "engines": {
     "npm": ">=3"
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
-    "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
@@ -28,16 +27,21 @@
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
   },
-  "author": "Cory House",
+  "author": "Michael Washburn",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "3.3.7",
+    "isomorphic-fetch": "2.2.1",
+    "nock": "9.0.27",
     "object-assign": "4.1.0",
     "react": "16.0.0",
+    "react-bootstrap": "0.31.5",
     "react-dom": "16.0.0",
     "react-redux": "5.0.5",
     "react-router-dom": "4.2.2",
     "react-router-redux": "5.0.0-alpha.6",
     "redux": "3.6.0",
+    "redux-mock-store": "1.3.0",
     "redux-thunk": "2.1.0"
   },
   "devDependencies": {
