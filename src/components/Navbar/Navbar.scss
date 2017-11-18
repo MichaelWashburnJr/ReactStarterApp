@@ -1,0 +1,30 @@
+$color: #777;
+$color-dark: #333;
+
+.navlink-btn {
+  color: $color;
+  background-color: transparent;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  &:hover {
+    color: $color-dark;
+  }
+}
+
+.navbrand {
+  .text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: $color;
+  }
+  &:hover {
+    cursor: pointer;
+    .text {
+      color: $color-dark;
+    }
+  }
+}

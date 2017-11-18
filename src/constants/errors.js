@@ -1,0 +1,1 @@
+const LOGIN_FAILED = 'Failed to login with provided email and password.';

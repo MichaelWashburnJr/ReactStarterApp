@@ -1,30 +1,25 @@
 /* eslint-disable import/no-named-as-default */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Switch, /*NavLink,*/ Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import Navbar from './Navbar';
 import HomePage from '../containers/HomePage';
+import LoginPage from '../containers/LoginPage';
 import NotFoundPage from './NotFoundPage';
 import '../styles.scss';
 
-// This is a class-based component because the current
-// version of hot reloading won't hot reload a stateless
-// component at the top-level.
-
 class App extends React.Component {
   render() {
-        // <div>
-        //   <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
-        //   {' | '}
-        //   <NavLink to="/fuel-savings" activeStyle={activeStyle}>Demo App</NavLink>
-        //   {' | '}
-        //   <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
-        // </div>
     return (
       <div>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route component={NotFoundPage} />
-        </Switch>
+        <Navbar />
+        <div className="page-body">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+        </div>
       </div>
     );
   }

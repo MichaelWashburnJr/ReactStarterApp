@@ -2,6 +2,10 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 
+const SETTINGS = {
+  API_URL: 'http://localhost:8000'
+};
+
 export default {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json']
@@ -22,8 +26,10 @@ export default {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'), // Tells React to build in either dev or prod modes. https://facebook.github.io/react/downloads.html (See bottom)
-      __DEV__: true
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development'),
+        'API_URL': JSON.stringify(SETTINGS.API_URL)
+      }
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
