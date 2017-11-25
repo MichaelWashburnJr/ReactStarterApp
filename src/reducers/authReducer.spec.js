@@ -3,7 +3,11 @@ import reducer from './authReducer';
 
 describe('Reducers::authReducer', () => {
   const getInitialState = () => {
-    return {};
+    return {
+      token: null,
+      user: null,
+      isAuthenticated: false,
+    };
   };
 
   it('should set initial state by default', () => {
@@ -27,7 +31,8 @@ describe('Reducers::authReducer', () => {
       user: {
         pk: 1,
         email: 'test@test.com',   
-      }
+      },
+      isAuthenticated: true,
     };
 
     expect(reducer(getInitialState(), action)).toEqual(expected);

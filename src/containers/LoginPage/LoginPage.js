@@ -18,8 +18,9 @@ class LoginPage extends React.Component {
 
   submit(values) {
     const email = values.email;
-    const password = values.password
+    const password = values.password;
     this.props.actions.login(email, password).then((response) => {
+      return response;
       //TODO: Navigate to landing page for authenticated users
     }, (error) => {
       this.setState({alert: error});
@@ -37,7 +38,7 @@ LoginPage.propTypes = {
   actions: PropTypes.object.isRequired,
 };
 
-function mapStateToProps(state) {
+function mapStateToProps(/*state*/) {
   return {
     // data: state.reddit.data,
     // isFetching: state.reddit.isFetching,

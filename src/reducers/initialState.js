@@ -1,3 +1,7 @@
 export default {
-  auth: {}
+  auth: {
+    isAuthenticated: false,
+    token: null,
+    user: null,
+  }
 };

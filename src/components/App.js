@@ -8,22 +8,18 @@ import LoginPage from '../containers/LoginPage';
 import NotFoundPage from './NotFoundPage';
 import '../styles.scss';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <div className="page-body">
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/login" component={LoginPage} />
-            <Route component={NotFoundPage} />
-          </Switch>
-        </div>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <Navbar />
+    <div className="page-body">
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
+    </div>
+  </div>
+);
 
 App.propTypes = {
   children: PropTypes.element

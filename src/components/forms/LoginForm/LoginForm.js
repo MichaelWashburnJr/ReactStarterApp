@@ -122,7 +122,7 @@ class LoginForm extends React.Component {
       if(isValid) {
         this.props.onSubmit(this.state.values);
       }
-    })
+    });
   }
 
   render() {

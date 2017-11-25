@@ -1,15 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
 import { ConnectedRouter } from 'react-router-redux';
-import { Provider } from 'react-redux';
+import { Provider, connect} from 'react-redux';
 import App from './App';
+import * as appActions from '../actions/appActions';
 
-export default class Root extends Component {
+class Root extends React.Component {
+
+  componentDidMount() {
+    this.props.init();
+  }
+
   render() {
-    const { store, history } = this.props;
     return (
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
+      <Provider store={this.props.store}>
+        <ConnectedRouter history={this.props.history}>
           <App />
         </ConnectedRouter>
       </Provider>
@@ -19,5 +25,22 @@ export default class Root extends Component {
 
 Root.propTypes = {
   store: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
+  init: PropTypes.func.isRequired,
 };
+
+function mapStateToProps(/*state*/) {
+  return {
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    init: bindActionCreators(appActions.init, dispatch),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Root);

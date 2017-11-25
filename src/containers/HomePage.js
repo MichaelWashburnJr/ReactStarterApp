@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+// import PropTypes from 'prop-types';
+// import {connect} from 'react-redux';
+// import {bindActionCreators} from 'redux';
 
 class HomePage extends React.Component {
 
@@ -14,20 +14,22 @@ class HomePage extends React.Component {
   }
 }
 
-HomePage.propTypes = {
-};
+// HomePage.propTypes = {
+// };
 
-function mapStateToProps(state) {
-  return {
-  };
-}
+export default HomePage;
 
-function mapDispatchToProps(dispatch) {
-  return {
-  };
-}
+// function mapStateToProps(state) {
+//   return {
+//   };
+// }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomePage);
+// function mapDispatchToProps(dispatch) {
+//   return {
+//   };
+// }
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(HomePage);

@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-const NavLink = (props) => (
+const NavAction = (props) => (
   <li role="presentation">
-    <button className="navlink-btn" onClick={() => props.history.push(props.to)}>
+    <button className="navlink-btn" onClick={props.onClick}>
       {props.children}
     </button>
   </li>
 );
 
-NavLink.propTypes = {
-  to: PropTypes.string.isRequired,
+NavAction.propTypes = {
+  onClick: PropTypes.func.isRequired,
   children: PropTypes.string.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }),
 };
 
-export default withRouter(NavLink);
+export default withRouter(NavAction);
